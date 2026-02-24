@@ -7,13 +7,12 @@ import { DashboardCard } from "./DashboardGrid";
 const stats = [
   {
     label: "Experience",
-    value: "3+ Years",
+    value: "1+ Years",
     icon: Award,
     color: "text-blue-600",
   },
-  { label: "Projects", value: "24+", icon: Code, color: "text-orange-500" },
-  { label: "Clients", value: "12+", icon: Users, color: "text-emerald-500" },
-  { label: "Coffee", value: "∞", icon: Coffee, color: "text-rose-500" },
+  { label: "Projects", value: "10+", icon: Code, color: "text-orange-500" },
+  { label: "Clients", value: "3+", icon: Users, color: "text-emerald-500" },
 ];
 
 export default function StatsSection() {

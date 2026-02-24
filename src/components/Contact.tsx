@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
-import { Mail, MessageSquare, Send, User } from "lucide-react";
+import { Mail, MessageSquare, Pin, Send, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Lottie from "lottie-react";
 import contactAnimation from "../../public/contact-me.json";
@@ -133,10 +133,10 @@ export default function Contact() {
                   </div>
                   <div className="text-start">
                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                      Location
+                      <Pin />
                     </p>
                     <p className="text-sm font-bold text-[#000080]">
-                      Casablanca, Morocco
+                      Sale, Morocco
                     </p>
                   </div>
                 </div>

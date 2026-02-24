@@ -64,7 +64,7 @@ export default function Sidebar() {
             animate={{ opacity: 1 }}
             className="font-bold text-xl tracking-tight text-[#000080] whitespace-nowrap"
           >
-            Zakaria<span className="text-blue-600">.</span>
+            <span className="text-red-600">.</span>Z
           </motion.span>
         )}
       </div>
