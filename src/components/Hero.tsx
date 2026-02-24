@@ -96,7 +96,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-blue-100 blur-[80px] rounded-full opacity-50" />
             <div className="relative w-full h-full rounded-[40px] overflow-hidden border-8 border-white bg-slate-50 shadow-2xl">
               <Image
-                src="/developer_headshot.png"
+                src="/founder.jpg"
                 alt="Zakaria Headshot"
                 fill
                 className="object-cover"
