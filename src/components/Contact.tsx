@@ -123,7 +123,7 @@ export default function Contact() {
                       {t("email")}
                     </p>
                     <p className="text-sm font-bold text-[#000080]">
-                      contact@zakaria.com
+                      zakariazinedine1@gmail.com
                     </p>
                   </div>
                 </div>
