@@ -2,86 +2,62 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import {
-  Cloud,
-  Code2,
-  Cpu,
-  Database,
-  Globe,
-  Layers,
-  Layout,
-  Server,
-  Smartphone,
-  Webhook,
-  Zap,
-} from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const skills = [
   {
     name: "TypeScript",
-    icon: <Code2 size={24} />,
-    color: "text-blue-500",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     dot: "bg-blue-500",
   },
   {
     name: "React / Next.js",
-    icon: <Globe size={24} />,
-    color: "text-indigo-600",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
     dot: "bg-indigo-600",
   },
   {
     name: "Node.js / Express",
-    icon: <Server size={24} />,
-    color: "text-green-600",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     dot: "bg-green-600",
   },
   {
     name: "Tailwind CSS",
-    icon: <Layout size={24} />,
-    color: "text-cyan-500",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
     dot: "bg-cyan-500",
   },
   {
     name: "PostgreSQL / MongoDB",
-    icon: <Database size={24} />,
-    color: "text-emerald-600",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     dot: "bg-emerald-600",
   },
   {
     name: "GraphQL / APIs",
-    icon: <Zap size={24} />,
-    color: "text-pink-500",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
     dot: "bg-pink-500",
   },
   {
     name: "Socket.io / Real-time",
-    icon: <Webhook size={24} />,
-    color: "text-orange-600",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
     dot: "bg-orange-600",
   },
   {
     name: "PWA / Offline-First",
-    icon: <Smartphone size={24} />,
-    color: "text-sky-500",
+    logo: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pwa.svg",
     dot: "bg-sky-500",
   },
   {
     name: "Zustand / State",
-    icon: <Layers size={24} />,
-    color: "text-purple-600",
+    logo: "/zustand-original.svg",
     dot: "bg-purple-600",
   },
   {
     name: "Docker / DevOps",
-    icon: <Cloud size={24} />,
-    color: "text-blue-600",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
     dot: "bg-blue-600",
   },
   {
     name: "System Design",
-    icon: <Cpu size={24} />,
-    color: "text-amber-600",
+    logo: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/blueprint.svg",
     dot: "bg-amber-600",
   },
 ];
@@ -91,8 +67,7 @@ export default function TechStack() {
 
   return (
     <div id="techstack" className="space-y-8">
-      {/* Desktop Grid View */}
-      <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {skills.map((skill, index) => (
           <motion.div
             key={skill.name}
@@ -105,68 +80,29 @@ export default function TechStack() {
               borderColor: "#3b3bb1",
               boxShadow: "0 20px 25px -5px rgba(0, 0, 128, 0.05)",
             }}
-            className="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-4 transition-all hover:bg-white group relative overflow-hidden"
+            className="p-3 sm:p-4 rounded-2xl bg-white border border-slate-100 flex flex-col sm:flex-row items-center gap-2 sm:gap-4 transition-all hover:bg-slate-50 group relative overflow-hidden text-center sm:text-left"
           >
             <div
               className={cn(
-                "absolute top-2 right-2 w-2 h-2 rounded-full",
+                "absolute top-2 right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full",
                 skill.dot,
               )}
             />
-            <div
-              className={`${skill.color} group-hover:scale-110 transition-transform duration-300 shrink-0 p-2 bg-white rounded-xl shadow-sm`}
-            >
-              {skill.icon}
+            <div className="group-hover:scale-110 transition-transform duration-300 shrink-0 p-2 bg-slate-50 rounded-xl shadow-sm w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center overflow-hidden">
+              <img
+                src={skill.logo}
+                alt={skill.name}
+                className="w-full h-full object-contain"
+              />
             </div>
             <span
-              className="font-bold text-slate-700 group-hover:text-[#000080]"
+              className="font-bold text-slate-700 group-hover:text-[#000080] text-xs sm:text-sm"
               dir="ltr"
             >
               {skill.name}
             </span>
           </motion.div>
         ))}
-      </div>
-
-      {/* Mobile Carousel View */}
-      <div className="md:hidden overflow-hidden relative p-1">
-        <motion.div
-          drag="x"
-          dragConstraints={{ left: -1000, right: 0 }} // Dynamic constraints would be better but this is a quick win
-          className="flex gap-4 cursor-grab active:cursor-grabbing pb-4"
-          style={{ width: "max-content" }}
-        >
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              className="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-4 transition-all hover:bg-white group relative overflow-hidden shrink-0 w-[240px]"
-            >
-              <div
-                className={cn(
-                  "absolute top-2 right-2 w-2 h-2 rounded-full",
-                  skill.dot,
-                )}
-              />
-              <div
-                className={`${skill.color} group-hover:scale-110 transition-transform duration-300 shrink-0 p-2 bg-white rounded-xl shadow-sm`}
-              >
-                {skill.icon}
-              </div>
-              <span
-                className="font-bold text-slate-700 group-hover:text-[#000080]"
-                dir="ltr"
-              >
-                {skill.name}
-              </span>
-            </motion.div>
-          ))}
-        </motion.div>
-        {/* Subtle indicator for scrollability */}
-        <div className="absolute right-0 top-0 bottom-0 w-8 bg-linear-to-l from-white to-transparent pointer-events-none" />
       </div>
     </div>
   );

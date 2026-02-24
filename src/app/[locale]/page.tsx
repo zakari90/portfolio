@@ -41,9 +41,11 @@ export default function Home() {
         </div>
         {/* Contact Widget */}
         <div className="col-span-full" id="contact">
-          <DashboardCard title={ct("title_start") + " " + ct("title_end")}>
+          <Contact />
+
+          {/* <DashboardCard title={ct("title_start") + " " + ct("title_end")}>
             <Contact />
-          </DashboardCard>
+          </DashboardCard> */}
         </div>
         {/* Footer */}
         <div className="col-span-full py-8 text-center text-zinc-600 text-sm">

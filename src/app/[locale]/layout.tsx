@@ -44,6 +44,20 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={isRtl ? "rtl" : "ltr"} className="dark">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var script = document.createElement('script');
+                script.src = '/nf-analytics.js';
+                script.async = true;
+                document.head.appendChild(script);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-slate-50 text-[#000080] selection:bg-blue-100 font-sans`}
       >
