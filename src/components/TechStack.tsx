@@ -1,22 +1,21 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import {
+  Cloud,
   Code2,
+  Cpu,
   Database,
   Globe,
+  Layers,
   Layout,
   Server,
   Smartphone,
-  Terminal,
-  Cpu,
-  Zap,
-  Layers,
   Webhook,
-  Cloud,
+  Zap,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { cn } from "@/lib/utils";
 
 const skills = [
   {
@@ -92,7 +91,8 @@ export default function TechStack() {
 
   return (
     <div id="techstack" className="space-y-8">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* Desktop Grid View */}
+      <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4">
         {skills.map((skill, index) => (
           <motion.div
             key={skill.name}
@@ -126,6 +126,47 @@ export default function TechStack() {
             </span>
           </motion.div>
         ))}
+      </div>
+
+      {/* Mobile Carousel View */}
+      <div className="md:hidden overflow-hidden relative p-1">
+        <motion.div
+          drag="x"
+          dragConstraints={{ left: -1000, right: 0 }} // Dynamic constraints would be better but this is a quick win
+          className="flex gap-4 cursor-grab active:cursor-grabbing pb-4"
+          style={{ width: "max-content" }}
+        >
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-4 transition-all hover:bg-white group relative overflow-hidden shrink-0 w-[240px]"
+            >
+              <div
+                className={cn(
+                  "absolute top-2 right-2 w-2 h-2 rounded-full",
+                  skill.dot,
+                )}
+              />
+              <div
+                className={`${skill.color} group-hover:scale-110 transition-transform duration-300 shrink-0 p-2 bg-white rounded-xl shadow-sm`}
+              >
+                {skill.icon}
+              </div>
+              <span
+                className="font-bold text-slate-700 group-hover:text-[#000080]"
+                dir="ltr"
+              >
+                {skill.name}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
+        {/* Subtle indicator for scrollability */}
+        <div className="absolute right-0 top-0 bottom-0 w-8 bg-linear-to-l from-white to-transparent pointer-events-none" />
       </div>
     </div>
   );
