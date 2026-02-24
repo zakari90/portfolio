@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #ffffff;
+  --foreground: #000080; /* Navy from inspiration */
+  --accent-navy: #000080;
+  --accent-indigo: #3b3bb1;
+  --text-muted: #64748b;
+  --card-bg: #ffffff;
+  --card-border: #f1f5f9;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    #f1f5f9 1px,
+    transparent 1px
+  );
+  background-size: 40px 40px;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.drop {
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border-radius: 57% 43% 37% 63% / 45% 52% 48% 52%;
+  box-shadow:
+    inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+    15px 25px 10px rgba(0, 0, 0, 0.1),
+    15px 20px 20px rgba(0, 0, 0, 0.05),
+    inset -10px -10px 15px rgba(237, 237, 237, 0.9);
+  animation: liquid-wobble 8s ease-in-out infinite;
+}
+
+.drop:before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 35px;
+  width: 20px;
+  height: 20px;
+  border-radius: 42% 58% 37% 63% / 40% 43% 57% 60%;
+  background: #fff;
+}
+
+.drop:after {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 25px;
+  width: 10px;
+  height: 10px;
+  border-radius: 42% 58% 37% 63% / 40% 43% 57% 60%;
+  background: #ffffff;
+}
+
+@keyframes liquid-wobble {
+  0%,
+  100% {
+    border-radius: 57% 43% 37% 63% / 45% 52% 48% 52%;
+  }
+  33% {
+    border-radius: 43% 57% 53% 47% / 52% 45% 52% 48%;
+  }
+  66% {
+    border-radius: 50% 50% 41% 59% / 48% 52% 51% 49%;
+  }
 }
