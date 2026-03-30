@@ -82,7 +82,7 @@ export default function Contact() {
 
   return (
     <div id="contact" className="relative">
-      <div className="bg-slate-50 border border-slate-200 p-6 md:p-10 rounded-[32px] shadow-sm overflow-hidden">
+      <div className="sm:bg-slate-50 sm:border sm:border-slate-200 p-2 sm:p-6 md:p-10 sm:rounded-[32px] sm:shadow-sm overflow-hidden">
         {isSuccess ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -92,10 +92,10 @@ export default function Contact() {
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Send className="text-green-600" size={32} />
             </div>
-            <h3 className="text-2xl font-extrabold text-[#000080] mb-2">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-[#000080] mb-2">
               {t("success_title")}
             </h3>
-            <p className="text-slate-500">{t("success_msg")}</p>
+            <p className="text-slate-500 text-sm sm:text-base">{t("success_msg")}</p>
             <button
               onClick={() => setIsSuccess(false)}
               className="mt-8 px-8 py-3 bg-[#000080] hover:bg-[#3b3bb1] text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-900/10"
@@ -107,7 +107,7 @@ export default function Contact() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div className="space-y-4">
-                <p className="text-slate-500 text-lg leading-relaxed text-start max-w-md">
+                <p className="text-slate-500 text-base sm:text-lg leading-relaxed text-start max-w-none md:max-w-md">
                   {t("description")}
                 </p>
               </div>
@@ -148,7 +148,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-white p-6 md:p-8 rounded-[24px] border border-slate-100 shadow-xl shadow-blue-900/5">
+            <div className="sm:bg-white p-4 sm:p-6 md:p-8 sm:rounded-[24px] sm:border sm:border-slate-100 sm:shadow-xl sm:shadow-blue-900/5 bg-transparent border-none shadow-none">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {apiError && (
                   <div className="p-4 bg-red-50 text-red-600 rounded-xl text-sm font-medium border border-red-100">

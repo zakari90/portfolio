@@ -30,7 +30,7 @@ export default function StatsSection() {
               <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider">
                 {stat.label}
               </p>
-              <h4 className="text-xl font-bold text-[#000080] tracking-tight">
+              <h4 className="text-lg sm:text-xl font-bold text-[#000080] tracking-tight">
                 {stat.value}
               </h4>
             </div>

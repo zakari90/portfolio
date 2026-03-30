@@ -48,7 +48,7 @@ function ProjectCard({
           x.set(0);
           y.set(0);
         }}
-        className="relative h-full p-6 rounded-3xl bg-slate-50 border border-slate-200 overflow-hidden group hover:border-[#3b3bb1] hover:shadow-xl hover:shadow-blue-900/5 transition-all"
+        className="relative h-full p-6 sm:rounded-3xl sm:bg-slate-50 sm:border sm:border-slate-200 overflow-hidden group sm:hover:border-[#3b3bb1] sm:hover:shadow-xl sm:hover:shadow-blue-900/5 transition-all bg-transparent border-none shadow-none"
       >
         {project.image ? (
           <div className="absolute top-0 right-0 w-40 h-40 opacity-10 group-hover:opacity-20 transition-opacity duration-500 overflow-hidden rounded-bl-[40px]">
@@ -66,10 +66,10 @@ function ProjectCard({
         )}
 
         <div className="relative z-10 flex flex-col h-full">
-          <h3 className="text-xl font-extrabold text-[#000080] mb-3 group-hover:text-[#3b3bb1] transition-colors text-start">
+          <h3 className="text-lg sm:text-xl font-extrabold text-[#000080] mb-3 group-hover:text-[#3b3bb1] transition-colors text-start">
             {project.title}
           </h3>
-          <p className="text-slate-500 mb-6 grow leading-relaxed text-sm text-start">
+          <p className="text-slate-500 mb-6 grow leading-relaxed text-xs sm:text-sm text-start">
             {project.description}
           </p>
 

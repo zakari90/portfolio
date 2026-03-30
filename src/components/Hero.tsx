@@ -67,11 +67,11 @@ export default function Hero() {
           <h2 className="text-[#3b3bb1] font-bold text-sm tracking-widest uppercase">
             {t("greeting")}
           </h2>
-          <h1 className="text-5xl lg:text-6xl font-extrabold tracking-tight text-[#000080] leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-[#000080] leading-tight">
             {t("title_start")}{" "}
             <span className="text-[#3b3bb1]">{t("title_end")}</span>
           </h1>
-          <p className="text-slate-500 text-lg leading-relaxed max-w-md">
+          <p className="text-slate-500 text-base sm:text-lg leading-relaxed max-w-none md:max-w-md">
             {t("description")}
           </p>
 

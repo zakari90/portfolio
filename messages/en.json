@@ -78,7 +78,7 @@
     "email_placeholder": "name@example.com",
     "message": "Message",
     "message_placeholder": "Tell me about your project...",
-    "send": "Send Message",
+    "send": "",
     "err_name_min": "Name must be at least 2 characters",
     "err_email_invalid": "Please enter a valid email address",
     "err_message_min": "Message must be at least 10 characters",

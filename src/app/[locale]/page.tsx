@@ -29,7 +29,7 @@ export default function Home() {
         <StatsSection />
         {/* Tech Stack Widget */}
         <div className="col-span-full" id="techstack">
-          <DashboardCard title={st("title")}>
+          <DashboardCard title={st("title")} showCardOnMobile={true}>
             <TechStack />
           </DashboardCard>
         </div>
