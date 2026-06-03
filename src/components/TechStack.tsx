@@ -21,12 +21,17 @@ const skills = [
     dot: "bg-green-600",
   },
   {
+    name: "Laravel / PHP",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+    dot: "bg-red-500",
+  },
+  {
     name: "Tailwind CSS",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
     dot: "bg-cyan-500",
   },
   {
-    name: "PostgreSQL / MongoDB",
+    name: "Postgres / SQLite / Mongo",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     dot: "bg-emerald-600",
   },
