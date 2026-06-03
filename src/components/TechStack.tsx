@@ -42,7 +42,7 @@ const skills = [
   },
   {
     name: "PWA / Offline-First",
-    logo: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pwa.svg",
+    logo: "https://cdn.simpleicons.org/pwa",
     dot: "bg-sky-500",
   },
   {
@@ -57,7 +57,7 @@ const skills = [
   },
   {
     name: "System Design",
-    logo: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/blueprint.svg",
+    logo: "https://cdn.simpleicons.org/blueprintjs",
     dot: "bg-amber-600",
   },
 ];

@@ -9,6 +9,15 @@ export const projects = [
     demoUrl: "https://alhussary-warsh.netlify.app",
   },
   {
+    slug: "devinsight-laravel-blog",
+    key: "devinsight",
+    featured: true,
+    tags: ["Laravel", "Blade", "Tailwind CSS", "SQLite"],
+    color: "from-rose-600 to-orange-500",
+    githubUrl: "https://github.com/zakari90/laravel-blog.git",
+    demoUrl: null,
+  },
+  {
     slug: "center-management",
     key: "2",
     featured: true,
